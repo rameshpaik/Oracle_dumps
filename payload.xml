@@ -1,0 +1,64 @@
+<soapenv:Envelope xmlns:sch="http://xmlns.oracle.com/scheduler" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/scheduler/types">
+   <soapenv:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsu:Timestamp wsu:Id="TS-F1F56A9D8E6D282AFC16730645164994">
+            <wsu:Created>2023-01-07T04:08:36.499Z</wsu:Created>
+            <wsu:Expires>2023-01-07T04:09:36.499Z</wsu:Expires>
+         </wsu:Timestamp>
+         <wsse:UsernameToken wsu:Id="UsernameToken-F1F56A9D8E6D282AFC16730645143383">
+            <wsse:Username>integration_user</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">Welcome123</wsse:Password>
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">rM3ppYs9C9SOvOux4O9ABQ==</wsse:Nonce>
+            <wsu:Created>2023-01-07T04:08:34.337Z</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="TS-F1F56A9D8E6D282AFC16730637138442">
+            <wsu:Created>2023-01-07T03:55:13.844Z</wsu:Created>
+            <wsu:Expires>2023-01-07T03:56:13.844Z</wsu:Expires>
+         </wsu:Timestamp>
+         <wsse:UsernameToken wsu:Id="UsernameToken-F1F56A9D8E6D282AFC16730637118231">
+            <wsse:Username>integration_user</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">Welcome123</wsse:Password>
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">19MGAoEIkPOe6yI8Z2h66g==</wsse:Nonce>
+            <wsu:Created>2023-01-07T03:55:11.820Z</wsu:Created>
+         </wsse:UsernameToken>
+      </wsse:Security>
+      <wsa:Action>submitRequest</wsa:Action>
+      <wsa:MessageID>uuid:881e80da-6bb4-43a8-85c0-03841c541f42</wsa:MessageID>
+   </soapenv:Header>
+   <soapenv:Body>
+      <sch:submitRequest>
+         <sch:jobDefinitionId>
+            <!--Optional:-->
+            <typ:name>citco_essjobsettest</typ:name>
+            <!--Optional:-->
+            <typ:packageName>/oracle/apps/ess/custom/citco_essjobsettest</typ:packageName>
+            <!--Optional:-->
+            <typ:type>JOB_SET</typ:type>
+         </sch:jobDefinitionId>
+         <sch:application>FscmEss</sch:application>
+         <sch:requestParameters>
+            <!--0 to 1000 repetitions:-->
+            <typ:parameter>
+               <!--Optional:-->
+               <typ:dataType>string</typ:dataType>
+               <!--Optional:-->
+               <typ:name>submit.argument1</typ:name>
+               <!--Optional:-->
+               <typ:scope>10</typ:scope>
+               <!--Optional:-->
+               <typ:value>2023-01-07</typ:value>
+            </typ:parameter>
+            <typ:parameter>
+               <!--Optional:-->
+               <typ:dataType>date</typ:dataType>
+               <!--Optional:-->
+               <typ:name>submit.argument2</typ:name>
+               <!--Optional:-->
+               <typ:scope>10</typ:scope>
+               <!--Optional:-->
+               <typ:value>step1</typ:value>
+            </typ:parameter>
+         </sch:requestParameters>
+      </sch:submitRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions
+     name="ESSWebService"
+     targetNamespace="http://xmlns.oracle.com/scheduler"
+     xmlns="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://xmlns.oracle.com/scheduler"
+     xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+<wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="SchedulerServiceImplPort_Fault_Policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsp:ExactlyOne>
+      <wsp:All/>
+      <wsp:All/>
+      <wsp:All/>
+      <wsp:All/>
+   </wsp:ExactlyOne>
+</wsp:Policy><wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="SchedulerServiceImplPort_Input_Policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsp:ExactlyOne>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+   </wsp:ExactlyOne>
+</wsp:Policy><wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="SchedulerServiceImplPort_Output_Policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsp:ExactlyOne>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+   </wsp:ExactlyOne>
+</wsp:Policy><wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="wsaddr_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+</wsp:Policy><wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="wss11_saml_or_username_token_with_message_protection_service_policy">
+   <wsp:ExactlyOne>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:ProtectTokens/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssSamlV11Token11/>
+                  </wsp:Policy>
+               </sp:SamlToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssX509V3Token11/>
+                  </wsp:Policy>
+               </sp:X509Token>
+            </wsp:Policy>
+         </sp:EndorsingSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:MustSupportRefKeyIdentifier/>
+               <sp:MustSupportRefIssuerSerial/>
+               <sp:MustSupportRefThumbprint/>
+               <sp:MustSupportRefEncryptedKey/>
+               <sp:RequireSignatureConfirmation/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128Exn256/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:ProtectTokens/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssSamlV11Token11/>
+                  </wsp:Policy>
+               </sp:SamlToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssX509V3Token11/>
+                  </wsp:Policy>
+               </sp:X509Token>
+            </wsp:Policy>
+         </sp:EndorsingSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:MustSupportRefKeyIdentifier/>
+               <sp:MustSupportRefIssuerSerial/>
+               <sp:MustSupportRefThumbprint/>
+               <sp:MustSupportRefEncryptedKey/>
+               <sp:RequireSignatureConfirmation/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssUsernameToken10/>
+                  </wsp:Policy>
+               </sp:UsernameToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:MustSupportRefKeyIdentifier/>
+               <sp:MustSupportRefIssuerSerial/>
+               <sp:MustSupportRefThumbprint/>
+               <sp:MustSupportRefEncryptedKey/>
+               <sp:RequireSignatureConfirmation/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128Exn256/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssUsernameToken10/>
+                  </wsp:Policy>
+               </sp:UsernameToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:MustSupportRefKeyIdentifier/>
+               <sp:MustSupportRefIssuerSerial/>
+               <sp:MustSupportRefThumbprint/>
+               <sp:MustSupportRefEncryptedKey/>
+               <sp:RequireSignatureConfirmation/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy/>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+            </wsp:Policy>
+         </sp:TransportBinding>
+         <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssSamlV11Token10/>
+                  </wsp:Policy>
+               </sp:SamlToken>
+            </wsp:Policy>
+         </sp:SupportingTokens>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy/>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+            </wsp:Policy>
+         </sp:TransportBinding>
+         <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssSamlV20Token11/>
+                  </wsp:Policy>
+               </sp:SamlToken>
+            </wsp:Policy>
+         </sp:SupportingTokens>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy/>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+            </wsp:Policy>
+         </sp:TransportBinding>
+         <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssUsernameToken10/>
+                  </wsp:Policy>
+               </sp:UsernameToken>
+            </wsp:Policy>
+         </sp:SupportingTokens>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy/>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+            </wsp:Policy>
+         </sp:TransportBinding>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy>
+                           <osp:HttpJwtAuthentication xmlns:osp="http://schemas.oracle.com/ws/2012/01/wssecuritypolicy"/>
+                        </wsp:Policy>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+            </wsp:Policy>
+         </sp:TransportBinding>
+      </wsp:All>
+   </wsp:ExactlyOne>
+</wsp:Policy>    <import namespace="http://xmlns.oracle.com/scheduler" location="https://fa-euxc-dev9-saasfaprod1.fa.ocs.oraclecloud.com:443/ess/esswebservice?WSDL=ESSWebServiceAbstract.wsdl"/>
+    <binding name="ESSWebServiceCallbackSoapHttp" type="tns:ESSWebServiceCallback" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsdl:required="true"/>
+        <operation name="onJobCompletion">
+            <soap:operation soapAction="onJobCompletion"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+        </operation>
+    </binding>
+    <binding name="ESSWebServiceSoapHttp" type="tns:ESSWebService" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsdl:required="true"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#wss11_saml_or_username_token_with_message_protection_service_policy" wsdl:required="false"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#wsaddr_policy" wsdl:required="false"/>
+        <operation name="submitRequest">
+            <soap:operation soapAction="submitRequest"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="ValidationException">
+                <soap:fault name="ValidationException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="submitRecurringRequest">
+            <soap:operation soapAction="submitRecurringRequest"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="ValidationException">
+                <soap:fault name="ValidationException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="submitInstantRecurringRequest">
+            <soap:operation soapAction="submitInstantRecurringRequest"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="ValidationException">
+                <soap:fault name="ValidationException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotAllowedException">
+                <soap:fault name="NotAllowedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="getCompletionStatus">
+            <soap:operation soapAction="getCompletionStatus"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+        </operation>
+        <operation name="getRequestState">
+            <soap:operation soapAction="getRequestState"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="checkInCancelling">
+            <soap:operation soapAction="checkInCancelling"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="getRequestDetail">
+            <soap:operation soapAction="getRequestDetail"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="getRequestDetailWithDiagnosis">
+            <soap:operation soapAction="getRequestDetailWithDiagnosis"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="getRequestExecutionContext">
+            <soap:operation soapAction="getRequestExecutionContext"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="holdRequest">
+            <soap:operation soapAction="holdRequest"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="IllegalStateException">
+                <soap:fault name="IllegalStateException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotAllowedException">
+                <soap:fault name="NotAllowedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="releaseRequest">
+            <soap:operation soapAction="releaseRequest"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="IllegalStateException">
+                <soap:fault name="IllegalStateException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="setAsyncRequestStatus">
+            <soap:operation soapAction="setAsyncRequestStatus"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="RequestNotFoundException">
+                <soap:fault name="RequestNotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="cancelRequest">
+            <soap:operation soapAction="cancelRequest"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="IllegalStateException">
+                <soap:fault name="IllegalStateException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="deleteRequest">
+            <soap:operation soapAction="deleteRequest"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="IllegalStateException">
+                <soap:fault name="IllegalStateException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotAllowedException">
+                <soap:fault name="NotAllowedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="purgeRequest">
+            <soap:operation soapAction="purgeRequest"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="IllegalStateException">
+                <soap:fault name="IllegalStateException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotAllowedException">
+                <soap:fault name="NotAllowedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="setSubmitArgs">
+            <soap:operation soapAction="setSubmitArgs"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="IllegalArgumentException">
+                <soap:fault name="IllegalArgumentException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="setStepsArgs">
+            <soap:operation soapAction="setStepsArgs"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="IllegalArgumentException">
+                <soap:fault name="IllegalArgumentException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="addPPActions">
+            <soap:operation soapAction="addPPActions"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="IllegalArgumentException">
+                <soap:fault name="IllegalArgumentException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="setNLSOptions">
+            <soap:operation soapAction="setNLSOptions"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="IllegalArgumentException">
+                <soap:fault name="IllegalArgumentException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+        <operation name="setExternalJobState">
+            <soap:operation soapAction="setExternalJobState"/>
+            <input>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Input_Policy" wsdl:required="false"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Output_Policy" wsdl:required="false"/>
+            </output>
+            <fault name="RuntimeServiceException">
+                <soap:fault name="RuntimeServiceException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="ValidationException">
+                <soap:fault name="ValidationException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+            <fault name="NotFoundException">
+                <soap:fault name="NotFoundException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#SchedulerServiceImplPort_Fault_Policy" wsdl:required="false"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="ESSWebService">
+        <port name="SchedulerServiceImplPort" binding="tns:ESSWebServiceSoapHttp">
+            <soap:address location="https://fa-euxc-dev9-saasfaprod1.fa.ocs.oraclecloud.com:443/ess/esswebservice"/>
+            <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing">
+                <wsa:Address xmlns:wsa="http://www.w3.org/2005/08/addressing">https://fa-euxc-dev9-saasfaprod1.fa.ocs.oraclecloud.com:443/ess/esswebservice</wsa:Address>
+                <wsid:Identity xmlns:wsid="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+                    <dsig:KeyInfo xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+                        <dsig:X509Data>
+                            <dsig:X509Certificate>MIIDYjCCAkqgAwIBAgIGAYRd7XqlMA0GCSqGSIb3DQEBCwUAMFkxEzARBgoJkiaJ
+k/IsZAEZFgNjb20xFjAUBgoJkiaJk/IsZAEZFgZvcmFjbGUxFTATBgoJkiaJk/Is
+ZAEZFgVjbG91ZDETMBEGA1UEAxMKQ2xvdWQ5Q0EtMjAeFw0yMjExMDkxOTQ1NTVa
+Fw0zMjExMDkxOTQ1NTVaMFcxEzARBgNVBAMTCnNzbERvbWFpbnMxDzANBgNVBAMT
+BkNsb3VkOTEvMC0GA1UEAxMmRVJQU0ktYmY5YTA3MmJmZGE3NGJkNDlmOWUwNDY4
+YWY0M2I5NDEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCMuwNcfYG4
+7jDQVyteH7QrO1D/xwngvPZqKQbdhmggK8izTk227tQNhbq2LW4u1FXWdAGzaduL
+nDxr61PZNpxQdRZ+ZwspM0AB7R6CtkhXCKTw1aP5mrQSJWo12xFAmRS9EVWRjp8i
+SqB1MVAo0SON14cygeSWz3VPRi8Gc78nrI9wiA8QrPTlWpXrlAxDATj+xB2xEYBE
+N/68UQ7bAsQDucYkgBZwJ4PuIl/q4m2kSVHU8pQV4tS1vo/c+Ppt0iBTSX5Ergaq
+inmbMffdqChjLIGEtFB6km+h7PwgCUo55jsY/58x217XjbmjYMmQhcpNbhE4cRO8
+FD7uF0s8eprPAgMBAAGjMjAwMA8GA1UdDwEB/wQFAwMH+AAwHQYDVR0OBBYEFA43
+Y75atUJu/t9k5Gz6UrorqlWQMA0GCSqGSIb3DQEBCwUAA4IBAQBMIJbn+h4gNBzG
+N4NPkdxW2dU3ljKTC3QMa6it2qvcLCfBR2EKDxquiEY+rdMEWa7/zBq1qHf0e/fU
+BoiRU344lEF+hZrxG+WM8eaPeIzugmZvMEWM9IyUGUejoLVhd1eZ3Pg1YkjUQe8d
+8xx8eVRp1CioXKiduRh+Alp6i7XOVXGTT6LWs1TVnexB81QBHLSSsTwOzl5x1xIQ
+vrI9TnFYZOHlVXLkqQ6ikl8NPGJclU5g4nkC0JIh2zwRb3KYjMdpDuxhTqi4XCez
+eXWVYSUo9EcnpnumtABVMXvOVK2FDLM83bJyRQQSh09lVmeRZLA1QF7Xu5WQ5DXn
+bQIgz87t</dsig:X509Certificate>
+                            <dsig:X509IssuerSerial>
+                                <dsig:X509IssuerName>CN=Cloud9CA-2, DC=cloud, DC=oracle, DC=com</dsig:X509IssuerName>
+                                <dsig:X509SerialNumber>1668023155365</dsig:X509SerialNumber>
+                            </dsig:X509IssuerSerial>
+                            <dsig:X509SubjectName>CN=ERPSI-bf9a072bfda74bd49f9e0468af43b941, CN=Cloud9, CN=sslDomains</dsig:X509SubjectName>
+                            <dsig:X509SKI>Djdjvlq1Qm7+32TkbPpSuiuqVZA=</dsig:X509SKI>
+                            <dsig:X509Certificate>MIIDazCCAlOgAwIBAgIIMdQl7kIMrv0wDQYJKoZIhvcNAQELBQAwWTETMBEGCgmS
+JomT8ixkARkWA2NvbTEWMBQGCgmSJomT8ixkARkWBm9yYWNsZTEVMBMGCgmSJomT
+8ixkARkWBWNsb3VkMRMwEQYDVQQDEwpDbG91ZDlDQS0yMCAXDTE2MDUyMTAyMTgw
+OVoYDzIxMTYwNDI3MDIxODA5WjBZMRMwEQYKCZImiZPyLGQBGRYDY29tMRYwFAYK
+CZImiZPyLGQBGRYGb3JhY2xlMRUwEwYKCZImiZPyLGQBGRYFY2xvdWQxEzARBgNV
+BAMTCkNsb3VkOUNBLTIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDP
+Zn2VAoMsIfWmIJks9exzK+DXaX6qYyBc12dRqDrRpC48v3CBeBchV/GT2E+mjcDp
+8Hzq8oIpwr9W5kwMja4PU3SPd4/0LB6WKbtLfHOnJxLg9EaT992UpbUGHaHlEq4o
+RAuVvPgDLp5sSspLZYEBKUh4vJXOyLitE1qsXn7mJNXRKTJZvrJKdfbs1dyTge3V
+3wk1rwY/wCWMKVgkqCgSzzWCGju8EZWoOrnzlR6BHkA0qZqeV4F7jDW8ucdv+Y20
+pOlOiaEbIg/ZFYGrZd5VWjlNvgLfU8P4C/YJLSkkcPHgoet3w4jI0S26efu59rVz
+gU9VsKnKtnqbDL99t81vAgMBAAGjNTAzMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYD
+VR0OBBYEFDMA8e55FI5kC12+guIE9xtcIXpFMA0GCSqGSIb3DQEBCwUAA4IBAQC4
+5tOVeqHxA8Bo/Rnv1SHHpULge3HyTC1XV9nmUdrj6g/U6rmbA5hVJ5LshgQ77qop
+O/YsaNHj5Ru1u/+8VOlZWpbn+kt3CDOuBUCe89CKBZT/KWEDkvtNl2qu16gOkhFn
+uTQk8NsARvwZZ6KtyPDmsbW4Nc/I5fKwPhdTaMjCV6Lh9RCG4kU77lbdwY3SaXlC
+BXXQyfPWMouCi7z1thJaF3cNGW4tnsibMR5ej9fJ9j6UvShxNgAIgjNDoihPlC6k
+0kW3QDR3bBjCHJX47505aIhckojH/eKsP2Or0eE/Ma4WNbndj0IXPE2ae5AVmC8/
+GRtwAmnoZPnt3g/I2m5j</dsig:X509Certificate>
+                        </dsig:X509Data>
+                    </dsig:KeyInfo>
+                </wsid:Identity>
+            </wsa:EndpointReference>
+        </port>
+    </service>
+    <service name="ESSWebServiceCallback">
+        <port name="callbackPort" binding="tns:ESSWebServiceCallbackSoapHttp">
+            <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+        </port>
+    </service>
+</definitions>
